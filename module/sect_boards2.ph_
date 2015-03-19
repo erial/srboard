@@ -1,0 +1,21 @@
+<?php
+if($sect[$section]) {
+$secb = '';
+for($ii=0;$bfsb[$section][$ii];$ii++) {
+if(!strpos($bfsb[$section][$ii],'>')) {
+$secc = '';
+if($id && $id == $bfsb[$section][$ii]) {$linK = 'linK thbd';$ctslys = $crt;}
+else {$linK ='linK';$ctslys = '';}
+$secb .= "\n<a href='{$index}?id=".encodee($bfsb[$section][$ii])."' class='{$linK}'><span class='titL'>{$bdidnm[$bfsb[$section][$ii]]}</span></a>";
+}}
+if($secb) {
+?>
+<div class='menu20 menu52'>
+<div class='menu50'>
+<a href='<?php echo $index?>?section=<?php echo $section?>' class='heaD'><?php echo $sect[$section][0]?></a>
+<?php echo $secb?>
+</div></div>
+<?php
+}
+}
+?>

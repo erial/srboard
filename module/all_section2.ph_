@@ -1,0 +1,23 @@
+<div class='menu20 menu52'>
+<div class='menu50'>
+<a href='<?php echo $index?>' class='heaD'>전체게시판</a>
+<?php
+for($i=1;$sect[$i];$i++) {
+if($bfsb[$i] && $sect[$i][1] != '3' && $sect[$i][1] != '7' && $sect[$i][1] != '6' && $sect[$i][1] != 'x' && $sect[$i][1] != 's') {
+$secc = '';
+if($section && $i == $section) $linK = 'linK thbd';
+else $linK ='linK';
+$ccfsb = count($bfsb[$i]) -1;
+if($ccfsb > -1) {
+for($ii=0;$ii <= $ccfsb;$ii++) {
+if($id && $id == $bfsb[$i][$ii]) $lincK = 'linK thbd';
+else $lincK = 'linK';
+if(!strpos($bfsb[$i][$ii],'>') && $bfsb[$i][$ii] != '>') $secc .= "\n<a href='{$index}?id=".encodee($bfsb[$i][$ii])."' class='{$lincK}'><span>{$bdidnm[$bfsb[$i][$ii]]}</span></a>";
+}}
+if($secc) {
+?>
+<div class='secc'>
+<a href='<?php echo $index?>?section=<?php echo $i?>' class='<?php echo $linK?>'><span class='titL'><?php echo $sect[$i][0]?></span></a><div style='display:block'><?php echo $secc?></div></div>
+<?php } else {?><a href='<?php echo $index?>?section=<?php echo $i?>' class='<?php echo $linK?>'><span class='titL'><?php echo $sect[$i][0]?></span></a>
+<?php }}}?>
+</div></div>

@@ -1,0 +1,78 @@
+﻿
+* {font-size:9pt; font-family:Gulim; line-height:130%}
+body {margin:0}
+a {color:black}
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+a:hover {text-decoration:underline}
+input {width:50px; height:15px; font-size:11px; border:0; margin:4px 0 0 0; padding:1px 0 1px 0; border-width:0px 0 1px 0px; border-style:solid; border-color:black; background-color:transparent}
+.button {cursor:pointer; width:40px; border:1px solid black; background-color:#D7D7D7; padding:0}
+.no {cursor:pointer; border:0; width:14px; height:14px; margin:0 0 3px 0; vertical-align:middle}
+.mgn5 {width:15px; height:15px; margin-left:7px; margin-right:7px}
+.f7 {font-family:tahoma,Gulim; font-size:7pt; color:#808080}
+.f8, .f8 a:link, .f8 a:hover, .f8 a:visited, .f8 a:active{font-family:verdana,Gulim; font-size:11px; letter-spacing:-1px; color:#B9AFAB}
+.b8 {font-size:11px; letter-spacing:-1px}
+.section_title {margin:7px 0 0px 0px; float:left; text-align:center; font-size:9pt; font-family:Gulim; color:#FAFFFF; font-weight:bold}
+.section_title a, .section_title a:link, .section_title a:hover, .section_title a:visited, .section_title a:active {float:left; padding:6px 15px 9px 15px; color:#FAFFFF; text-decoration:none}
+.section_title2 {margin:6px 0 0px 0px; float:left; text-align:center; font-size:9pt; font-family:Gulim; color:#373737; font-weight:bold; background-color:#F7F7F7}
+.section_title2 a, .section_title2 a:link, .section_title2 a:hover, .section_title2 a:visited, .section_title2 a:active {float:left; padding:8px 15px 8px 15px; color:#373737; text-decoration:none}
+.section_title_between {margin-top:10px; border-style:solid; border-color:#0F408F #5185D8 #5185D8 #0F408F; border-width:1px; height:15px; float:left; width:1px}
+.section_title_between2 {margin-top:10px; height:15px; float:left; width:3px}
+.ttb {background-color:#F7F7F7; width:100%}
+.bboder {border-style:solid; border-width:1px; border-color:#BDC6D6 #FFFFFF #FFFFFF #BDC6D6; background-color:#FFFFFF}
+.cltr {background-color:#2A5EB2; height:35px}
+.cltr td {text-align:center; color:#FAFFFF; font-weight:bold; border-top:1px solid #5289CC}
+.cltb {width:100%; background-color:#F7F7F7}
+.cltb td {text-align:center}
+#sectcenter input {border:1px solid #A3C6FF; font-size:9pt; height:18px; width:30px}
+#sectcenter input:hover {background-color:#D6E6FF}
+span, select, textarea {vertical-align:middle}
+#sectleft, #sectright {padding:5px;width:166px;border:1px solid #2A5EB2;background-color:#A3C6FF}
+#sectleft .subs,  #sectright .subs {width:110px; cursor:pointer}
+#sectcenter .out {border:1px solid #000000; text-align:center; width:20px; margin-left:5px; cursor:pointer}
+#sectcenter .up,  input.uparrow {border:1px solid #000000; text-align:center; width:20px; margin-right:5px; cursor:pointer}
+#sectcenter .blue a, #sectcenter .blue a:link, #sectcenter .blue a:hover {color:#2A5EB2; font-weight:bold}
+#admtip,#admtip2 {height:25px;text-align:left;background-color:#E6FFA3;border:1px solid #5185D8;padding:10px 0 0 10px;margin:0 auto 0 auto;width:920px;position:fixed;bottom:10px}
+#secxplain {background-color:#EAEAEA; text-align:left; padding:5px; width:500px}
+#secxplain .red {color:#FF6633; font-weight:bold}
+#secxplain .blue {font-size:11px; color:#0010ED}
+#gatewidget div {float:left; width:137px; height:22px; text-align:left}
+.graph .title {text-align:left;padding-left:10px; background:#2A5EB2; color:#FFF; height:30px}
+.exsett {display:none; background:#D8F1FF}
+.exsett h4 {background:#FFCF8B; font-size:9pt; padding:3px 0 3px 0; margin:0}
+div.bgz {padding:5px 0 10px 20px; text-align:left; line-height:26px}
+div.bga {background-color:#E6FFA3}
+div.bgc {background-color:#FFCB8B}
+span.r7 {font-family:tahoma; font-size:7pt; color:#FF6633}
+span.clr2 {background-color:#EF0FFF; color:#FFFFFF}
+#graph_hour {width:100%}
+#graph_hour td {width:39px}
+#graph_browser {width:100%}
+#graph_browser td {width:12.5%}
+#graph_month {width:100%}
+#graph_month div {float:left; width:29px; margin-right:1px}
+.table {background-color:#EAEAEA; margin-top:10px}
+.table td {background-color:#FFF}
+.table .title {background:#909DB2; color:#FFF; height:30px}
+.table td.title {width:100%}
+.table div {background-color:#3A5E90; text-align:center; color:#FFF; padding-top:6px}
+.table span.f7 {color:#FCFC00}
+.w30 {width:34px}
+.w50 {width:53px}
+input.w30, input.w50 {border:0; font-size:8pt; background:url('../icon/dgray.gif') no-repeat 0% 50%; text-align:center;}
+.linew {border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF}
+tr.cnt td, td.cnt {font-family:tahoma; font-size:7pt; color:#C24636}
+#mbclass {float:left; padding-left:5px}
+#mbclass span img {cursor:pointer}
+#mbclass span * {vertical-align:middle}
+label {cursor:pointer}
+.bdhdr {background-color:#EAEAEA;text-align:center}
+.bdhdr td {font-size:12px}
+.bdhdr span {font-size:11px}
+td.cbox a {display:block}
+td.cbox a:hover {border:1px solid #FF6633}
+.p_no {color:#FF6633; font-weight:bold}
+.pageno {font-family:Dotum; font-size:11px; color:#D6D6D6; text-align:center; letter-spacing:1px; color:#4B4B4B}
+.pageno td font {display:block; padding:4px 0px 4px 0px; margin:1px}
+.pageno td a {display:block; padding:4px 6px 4px 6px; margin:1px}
+.pageno a:hover {border:1px solid #BABABA; text-decoration:none; margin:0}

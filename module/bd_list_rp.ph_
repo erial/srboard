@@ -1,0 +1,58 @@
+﻿<?php
+$bd_id_bdlistrp = ''; //게시판 id
+$limit = 15; // 출력할 갯수
+
+if($bd_id_bdlistrp && $bdidnm[$bd_id_bdlistrp]) {
+?>
+<div class='menu20'><div class='menu10'>
+<div class='menu25'><div id="head_<?php echo $bd_id_bdlistrp?>_l" onmouseover="togge('<?php echo $bd_id_bdlistrp?>_l','<?php echo $bd_id_bdlistrp?>_r')" onclick="resize_n('<?php echo $bd_id_bdlistrp?>_l')"  class='menu_title menuon'><div class='meleft'><?php echo $bdidnm[$bd_id_bdlistrp]?></div></div>
+<div id="head_<?php echo $bd_id_bdlistrp?>_r" onmouseover="togge('<?php echo $bd_id_bdlistrp?>_r','<?php echo $bd_id_bdlistrp?>_l')" onclick="resize_n('<?php echo $bd_id_bdlistrp?>_r')" class='menu_title menuoff'><div class='meright'>최근 덧글</div></div></div>
+<div class='menu60'><div id='resizhgt_<?php echo $bd_id_bdlistrp?>_l' style='display:block;' class='menu40 entry-content'>
+<?php
+$ida = '';
+$ofn = fopen($dxr.$bd_id_bdlistrp."/no.dat","r");
+$ofl = fopen($dxr.$bd_id_bdlistrp."/list.dat","r");
+for($ii = 0;$ii < $limit;$ii++){
+if($ofnn = fgets($ofn)) {
+if($ofnn == "" || $ofnn == "\n") {
+$mwth = explode("\x1b",$fsbs[$bd_id_bdlistrp]);
+list($ida,$ofn,$ofl) = data6($ida,array($ofn,$ofl),array($bd_id_bdlistrp,$mwth[6]));
+if($ida == 'q') break;
+}
+$oflo = explode("\x1b",fgets($ofl));
+$ofno = (int)substr($ofnn,0,6);
+$nrp = explode("\x1b", $ofnn);
+if($nrp[2] > 0 || $nrp[3] > 0 ||$nrp[4] > 0) $nrp = " <span class='r7'>[".(int)($nrp[2] + $nrp[4] + $nrp[3])."]</span>";
+else $nrp = "";
+$oflo[3] = andamp($oflo[3]);
+echo "\n<div class='link'><a href='{$index}?id={$bd_id_bdlistrp}&amp;no={$ofno}' class='pvxy'>{$oflo[3]}</a></div><div class='small'>".date("m/d", substr($oflo[0],0,10))." - {$oflo[1]}{$nrp}</div>";
+}}
+fclose($ofn);
+fclose($ofl);
+?>
+</div><div id='resizhgt_<?php echo $bd_id_bdlistrp?>_r' style='display:none;' class='menu40 entry-content'>
+<?php
+if(@filesize($dxr.$bd_id_bdlistrp."/new_rp.dat")) {
+$fr = fopen($dxr.$bd_id_bdlistrp."/new_rp.dat","r");
+while($fro = fgets($fr)) $rbdt[substr($fro, 34, 10)] = array($bd_id_bdlistrp,$fro,$fsbs[$bd_id_bdlistrp][16]);
+fclose($fr);
+}
+if(is_array($rbdt)) {
+krsort($rbdt);
+$i = 1;
+while($i <= $limit && list($key,$value) = each($rbdt)) {
+$frr = preg_replace("`<[^>]+>?`i","",andamp(substr($value[1],44,-1)));
+if($frr[0] == "\x1b") $frr = "[비밀글]";
+?>
+<div class='link'><a href='<?php echo $index?>?id=<?php echo $bd_id_bdlistrp?>&amp;<?php echo ($value[2] == 'd')?'rp':'no';?>=<?php echo (int)substr($value[1],0,6)?>&amp;cc=<?php echo substr($value[1],6,7)?>' class='pvxy'><?php echo $frr?></a></div><div class='small'><?php echo date("m/d", $key)?> - <?php echo substr($value[1], 14, 20)?><?php if($section) echo "[".$bdidnm[$value[0]]."]";?></div>
+<?php
+$i++;
+}
+}
+?>
+
+</div></div><div class='menu70'><div></div></div></div></div>
+
+<?php } else echo "<h4>module/bd_list_rp.ph_에 게시판id를 입력하세요</h4>";
+unset($limit);
+?>

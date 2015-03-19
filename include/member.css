@@ -1,0 +1,57 @@
+﻿
+body {font-family:Gulim; overflow:visible}
+* {outline:none}
+.bdo {font-size:1em; line-height:160%}
+.bdo a:link {text-decoration:underline}
+.bdo a:visited {text-decoration:underline}
+.bdo a:hover {text-decoration:underline; color:#FF6633}
+.menu1 {border-style:solid; border-width:0px 1px 1px 1px; border-color:#D4D4D4}
+.menu2 {border-style:solid; border-width:0px 1px 1px 1px; border-color:#FFFFFF; padding:7px 0 5px 17px; line-height:150%; background-color:#F7F7F7}
+.menu_title1 {border-style:solid; border-color:#3A5E90; border-width:1px 1px 0 1px; text-align:center}
+.menu_title2 {border-style:solid; border-color:#5289CC; border-width:1px 1px 0 1px; height:40px; text-align:center; background-color:#2A5EB2}
+.menu_title3 {width:95px; padding:12px 0 8px 0; margin-top:10px; cursor:pointer; font-weight:bold; color:#373737; background-color:#F7F7F7}
+.menu_title4 {width:85px; text-align:center; padding:12px 0 2px 0; cursor:pointer; font-weight:bold; color:#FAFFFF}
+.menu_title5 {float:left; padding-top:14px; padding-left:14px; background-color:#FFFFFF; height:100px; line-height:15px}
+.menu_title6 {float:right; padding:60px 20px 0 0; margin-top:10px; color:#FAFFFF; font-weight:bold; font-size:1.3em; font-family:Batang}
+.menu_title7 {width:85px; text-align:center; padding:12px 0 8px 0; margin-top:10px; cursor:pointer; font-weight:bold; color:#373737; background-color:#F7F7F7}
+.menu_left {position:absolute; top:135px; left:10px; width:214px; text-align:left; margin-top:5px; z-index:2}
+.menu_title8 {float:left; padding:1px 1px 0 1px; margin-top:10px; background-color:#497DD0; border-style:solid; border-color:#396DC1; border-width:1px 1px 0 1px}
+.s11 {font-size:1.2em; margin-right:10px}
+.small {font-family:tahoma,Gulim; font-size:.95em; color:#BABABA}
+.calendar td {text-align:center}
+.calendar .isdoc {border:1px solid #C7C7C7; padding-top:3px; cursor:pointer}
+.calendar .thisdoc {border:1px solid #FF6633; background-color:#FFFAD9; padding-top:3px; cursor:pointer}
+.f7 {font-family:tahoma,Gulim; font-size:.85em}
+.f8 {font-family:verdana,arial,Gulim; font-size:.9em}
+.ddate, .ddate a, .ddate a:link {color:#666E7A; font-size:.85em; letter-spacing:-1px}
+.sigg {border:0; padding:8px 0 8px 0; border-width:7px; border:1px solid #DBD6C3; background-color:#FFFFFF; width:25%}
+.sigh {border:0; margin-bottom:10px}
+.menu a:link,.menu a:visited,.menu a:hover,.menu a:active {color:#808080}
+.butten {border:0; height:22px; padding:0px 5px 0 5px; background-color:#2A5EB2; color:#C0D7FC; border-color:#5185D8 #0F408F #0F408F #5185D8; border-style:solid; border-width:3px; cursor:pointer}
+#prview {z-index:3; position:absolute; width:200px; overflow:hidden; padding:10px; text-align:left; background-color:#FFFFFF; border:1px solid #5185D8}
+.logtitle, .logtitle a {font-family:'Malgun Gothic',Dotum,Gulim; font-size:1.3em; font-weight:bold}
+.wtable {table-layout:fixed; width:100%; text-align:left}
+.wtable .headtd {background:#FFF url('../icon/b4.png') repeat-x 0% 18%; height:30px}
+.wtable th {border-top:1px solid #E9E9E9; border-bottom:1px solid #ADADAD}
+.wtable .headtd th, .wtable td.f8 {text-align:center}
+.wtable td {padding:.5em 0 .5em 0; height:1em}
+.wtable td.bD7 {background-color:#D7D7D7;height:1px;padding:0}
+.wtable tr.bF7 {background-color:#F7F7F7;}
+.date {height:68px; vertical-align:top; background-color:#EAEAEA}
+.date td {padding:7px}
+#main {float:left; position:relative; left:235px}
+.fmmt {font-family:verdana; font-size:.9em}
+.fmmt input {float:left; width:26%; padding:1%; margin-bottom:5px; letter-spacing:0; background-color:#FAFAFA; margin-left:1%}
+.fmmt span {float:left; width:14%; text-align:right}
+.fmmt textarea {float:left; width:78%; padding:1%; height:88px; overflow:auto; font-family:Gulim; background-color:#FAFAFA}
+.fmmt textarea:hover {background-color:#FFFFFF}
+.fmmt input:hover {background-color:#FDFFEC}
+.fmmt .write {clear:both; border:0; margin-left:10px; width:70px; height:50px; background:url("../icon/c70.png"); font-size:1.2em; letter-spacing:0; font-family:verdana}
+.authority {border:5px solid #F1F1F1; padding:5px; margin:5px auto; width:242px}
+td.page_no {text-align:center; letter-spacing:3px; padding:10px 0 50px 0; color:#D7D7D7; font-size:1em; vertical-align:middle}
+td.page_no a {font-size:1em; color:#2B2B2B; vertical-align:middle}
+img.lockp {vertical-align:middle}
+.antispamdv {float:left; width:100%; padding-top:5px}
+.antispamdv img {float:left;}
+.antispamdv input {width:100px; padding:3px}
+.antispamdv span.f8 {width:130px}

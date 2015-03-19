@@ -1,0 +1,18 @@
+
+/* 모바일 */
+.mbebg {background:url('../icon/1y88.png') repeat-x 0% 0%; min-height:2em; color:#FFFFFF; font-weight:bold; padding:1em 0 0.5em 0; margin:1em 0 0.5em 0; text-align:center}
+.mbebg a, .mbebg a:link, .mbebg a:visited, .mbebg a:hover {color:#FFFFFF; font-size:1.3em}
+.mbebutt {border:1px solid #B4BAC1; background:#F3F3F3; font-size:1.6em; padding:5px 3% 5px 3%; margin:2px 1% 6px 1%; cursor:pointer}
+.mbeul {line-height:200%; font-size:1.4em}
+.pvxy {line-height:160%; font-size:1em}
+.mbeul li a, .menu40 a {display:block}
+.mbeslt {width:95%; font-size:1.4em; padding:5px}
+.mbebut {border:1px solid #B4BAC1; font-size:1.4em; background:#F3F3F3; margin-left:1%; width:4%; cursor:pointer}
+.menu_title div {font-size:1.6em; font-weight:bold; border:1px solid #B0B0B0; padding:10px; background:url('../icon/chat.png'); margin:5px 0 10px 0}
+.menu40 {height:100%}
+a:hover, a.active {background-color:#FFF0C7}
+#check_memo {padding-left:10%}
+#check_memo a {font-size:1.2em; line-height:200%;}
+#check_memo div a {font-size:1.5em;}
+#notifv {left:10px;}
+.menu60 .link {font-size:1.1em}

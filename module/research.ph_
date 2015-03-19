@@ -1,0 +1,34 @@
+<?php
+if($set) {
+$pollno = "00001";// 설문조사 질문번호를 5자리 값으로 넣습니다.
+if($pollno) {
+$plla = $dxr."poll_1.dat"; //질문
+if($fa = @fopen($plla,"r")) {
+while($fao = fgets($fa)) {
+if($fao[0] == "\x1b") {$novote = 1;$fao = substr($fao,1);} else $novote = 0;
+if(substr($fao,0,5) == $pollno) {$faa = explode("\x1b",$fao);break;}
+}
+fclose($fa);
+?>
+<div class='menu20'><div class='menu10'>
+<div class='menu25'><div class='menu_title menuone'><div>설문조사</div></div></div>
+<div class='menu60'><div class='menu40' style='padding-bottom:10px' align='center'>
+<ul style='padding:0;margin:0 0 5px 0;list-style-type:none;line-height:20px;text-align:left'>
+<li style='border-bottom:1px dotted #EAEAEA;padding-bottom:3px'><?php echo substr($faa[0],5)?></li>
+<?php
+for($pl = 1;$faa[$pl + 1];$pl++){
+?>
+<li><label><input type='radio' name='sublist_<?php echo $pollno?>' value='<?php echo $pl?>' /> <?php echo $faa[$pl]?></label></li>
+<?php
+}
+?>
+</ul>
+<input type='hidden' id='main_survey' value='' />
+<?php if(!$novote) {?><input type='button' class='srbt' value='투표하기' style='margin-right:10px' onclick='survey("<?php echo $pollno?>")' /><?php }?>
+<input type='button' class='srbt' value='결과보기' onclick='popup("include/poll.php?no=<?php echo $pollno?>",640,480)' />
+</div></div><div class='menu70'><div></div></div></div></div>
+<?php
+}}
+unset($pollno);
+}
+?>

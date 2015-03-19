@@ -1,0 +1,40 @@
+<?php
+$bd_id_bdthumb = ''; //게시판 id
+$limit = 4; //썸네일 출력갯수
+
+if($bd_id_bdthumb && $bdidnm[$bd_id_bdthumb]) {
+?>
+
+<div class='menu20 hslice' id='m20_<?php echo $bd_id_bdthumb?>'><div class='menu10'>
+<div class='menu25'><div class='menu_title menuone entry-title'><div><?php echo $bdidnm[$bd_id_bdthumb]?></div></div></div>
+<div class='menu60'><div class='menu40 entry-content'>
+<?php
+$ida = '';
+$ofn = fopen($dxr.$bd_id_bdthumb."/no.dat","r");
+$ofl = fopen($dxr.$bd_id_bdthumb."/list.dat","r");
+$mwth = explode("\x1b",$fsbs[$bd_id_bdthumb]);
+$i = 0;
+for($ii = 0;$i < $limit;$ii++){
+$ofnn = fgets($ofn);
+if($ofnn == "" || $ofnn == "\n") {
+list($ida,$ofn,$ofl) = data6($ida,array($ofn,$ofl),array($bd_id_bdthumb,$mwth[6]));
+if($ida == 'q') break;
+}
+$oflo = explode("\x1b",fgets($ofl));
+if($oflo[4]) {
+$ofno = (int)substr($ofnn,0,6);
+$nrp = explode("\x1b", $ofnn);
+if($nrp[2] > 0 || $nrp[3] > 0 ||$nrp[4] > 0) $nrp = " <span class='r7'>[".(int)($nrp[2] + $nrp[4] + $nrp[3])."]</span>";
+else $nrp = "";
+$oflo[3] = andamp($oflo[3]);
+if(substr($oflo[4], 0, 5) != "http:") $oflo[4] = "exe.php?sls={$bd_id_bdthumb}/file/".$oflo[4];
+echo "\n<a href='{$index}?id={$bd_id_bdthumb}&amp;no={$ofno}' onmouseover='preview(this.nextSibling.innerHTML,\"xx\")' onmouseout='preview()'><img src='{$oflo[4]}' alt='' class='gthumb_100' /></a><span style='display:none'>{$oflo[3]}{$nrp}<br /><span class='small'>[".date("m/d", substr($oflo[0],0,10))."] by {$oflo[1]}</span></span>";
+$i++;
+}}
+fclose($ofn);
+fclose($ofl);
+?>
+</div></div><div class='menu70'><div></div></div></div></div>
+<?php } else echo "<h4>module/bd_thumb.ph_에 게시판id를 입력하세요</h4>";
+unset($limit);
+?>

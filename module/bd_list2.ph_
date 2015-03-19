@@ -1,0 +1,44 @@
+﻿<?php
+$bd_id_bdlist2 = array('',''); //게시판id 두개 입력 :: array('첫번째 게시판id','두번째 게시판id')
+$limit = 15; // 출력할 갯수
+
+if($bd_id_bdlist2[0] && $bd_id_bdlist2[1] && $bdidnm[$bd_id_bdlist2[0]] && $bdidnm[$bd_id_bdlist2[1]]) {
+?>
+<div class='menu20'><div class='menu10'>
+<div class='menu25'><div id="head_<?php echo $bd_id_bdlist2[0]?>_" onmouseover="togge('<?php echo $bd_id_bdlist2[0]?>_','<?php echo $bd_id_bdlist2[1]?>_')" onclick="resize_n('<?php echo $bd_id_bdlist2[0]?>_')"  class='menu_title menuon'><div class='meleft'><?php echo $bdidnm[$bd_id_bdlist2[0]]?></div></div>
+<div id="head_<?php echo $bd_id_bdlist2[1]?>_" onmouseover="togge('<?php echo $bd_id_bdlist2[1]?>_','<?php echo $bd_id_bdlist2[0]?>_')" onclick="resize_n('<?php echo $bd_id_bdlist2[1]?>_')" class='menu_title menuoff'><div class='meright'><?php echo $bdidnm[$bd_id_bdlist2[1]]?></div></div></div>
+<div class='menu60'><div id='resizhgt_<?php echo $bd_id_bdlist2[0]?>_' style='display:block;' class='menu40 entry-content'>
+<?php
+for($i = 0;$i < 2;$i++) {
+$ida = '';
+$ofn = fopen($dxr.$bd_id_bdlist2[$i]."/no.dat","r");
+$ofl = fopen($dxr.$bd_id_bdlist2[$i]."/list.dat","r");
+for($ii = 0;$ii < $limit;$ii++){
+if($ofnn = fgets($ofn)) {
+if($ofnn == "" || $ofnn == "\n") {
+$mwth = explode("\x1b",$fsbs[$bd_id_bdlist2[$i]]);
+list($ida,$ofn,$ofl) = data6($ida,array($ofn,$ofl),array($bd_id_bdlist2[$i],$mwth[6]));
+if($ida == 'q') break;
+}
+$oflo = explode("\x1b",fgets($ofl));
+$ofno = (int)substr($ofnn,0,6);
+$nrp = explode("\x1b", $ofnn);
+if($nrp[2] > 0 || $nrp[3] > 0 ||$nrp[4] > 0) $nrp = " <span class='r7'>[".(int)($nrp[2] + $nrp[4] + $nrp[3])."]</span>";
+else $nrp = "";
+$oflo[3] = andamp($oflo[3]);
+echo "\n<div class='link'><a href='{$index}?id={$bd_id_bdlist2[$i]}&amp;no={$ofno}' class='pvxy'>{$oflo[3]}</a></div><div class='small'>".date("m/d", substr($oflo[0],0,10))." - {$oflo[1]}{$nrp}</div>";
+}}
+fclose($ofn);
+fclose($ofl);
+if($i < 1) {
+?>
+</div><div id='resizhgt_<?php echo $bd_id_bdlist2[1]?>_' style='display:none;' class='menu40 entry-content'>
+<?php
+}}
+?>
+
+</div></div><div class='menu70'><div></div></div></div></div>
+
+<?php } else echo "<h4>module/bd_list2.ph_에 게시판id를 입력하세요</h4>";
+unset($limit);
+?>
