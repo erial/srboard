@@ -1,2 +1,5 @@
+#데이터 및 채팅 데이터 git 전송방지
 chat/*.*
 data/*.*
+#.gitignore파일 업로드용
+!.gitignore
